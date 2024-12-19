@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido de Inserção</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% for pi in PI %}
+<div class="container">
+    {% include 'components/header.html' %}
+
+    <div class="tabela-container">
+        <table class="tabela">
+            <thead class="titulo-tabela">
+                <tr>
+                    <th class="thprograma">PROGRAMA</th>
+                    <th class="thcomunicador">COMUNICADOR</th>
+                    <th class="thhorario">HORÁRIO</th>
+                    <th class="thhorario2">SEG</th>
+                    <th class="datasSelecionadas">PÇ</th>
+                    {% for day in range(1, 32) %}
+                    <th class="datasSelecionadas{% if day > 9 %}2{% endif %}">{{ day }}</th>
+                    {% endfor %}
+                    <th class="thprograma4">INS</th>
+                    <th class="thprograma3">NEGOC</th>
+                    <th class="thprograma3">TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pi in PI %}
+                <tr>
+                    <td class="texto-programa">{{ pi.programa }}</td>
+                    <td class="texto-comunicador">{{ pi.comunicador }}</td>
+                    <td>{{ pi.Hinicio }} / {{ pi.HFim }}</td>
+                    <td>{{ pi.Duracao }}</td>
+                    <td>{{ pecas[0].peca }}</td>
+                    {% for day in range(1, 32) %}
+                    <td class="datasSelecionadas">{{ pi.datasSelecionadas.get('Dia ' ~ day, '') }}</td>
+                    {% endfor %}
+                    <td class="datasSelecionadas2">{{ pi.Insercoes | default(0) }}</td>
+                    <td class="datasSelecionadas2">{{ pi.UnitarioBruto | default(0) | float | currency }}</td>
+                    <td class="datasSelecionadas2">{{ pi.TotalBruto | default(0) | float | currency }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="coluna2">
+        <p class="info">
+            {{ obsOne }}
+            <br>
+            {{ obsTwo }}
+        </p>
+
+    </div>
+
+    <div class="tabela-container">
+        <table class="tabela">
+            <thead class="titulo-tabela2">
+                <tr>
+                <th class="thprograma">TOTAL GERAL</th>
+                <th class="th2"></th>
+
+                <th class="thprograma4">{{ totalInsercoes }}</th>
+                <th class="thprograma3">{{ totalBrutoo | currency }}</th>
+                <th class="thprograma3">{{ totalBruto | currency }}</th>
+                </tr>
+                </thead>
+            </table>
+    </div>
+
+    {% include 'components/footer.html' %}
+
+</div>
+{% endfor %}
+</body>
+</html>

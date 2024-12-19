@@ -1,0 +1,406 @@
+
+@page {
+  size: A4 landscape;
+  margin: 0cm 0.3cm 1cm 0.3cm;
+  padding: 0;
+}
+
+* {
+  page-break-before: avoid;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display:block;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header-apoio {
+  margin-bottom: 20px;
+}
+
+.header {
+  border-bottom: 1px solid black;
+}
+
+.header-item {
+  text-align: center;
+  padding-bottom: 18px;
+}
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.informacoes-header, .informacoes-apoio, .piHeader {
+  font-family: "Roboto", sans-serif;
+  font-size: 8px;
+  font-weight: 300;
+  margin-top: -6px;
+}
+
+.piHeader {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: right;
+}
+
+.linha1 {
+  padding: 5px 15px;
+  text-align: left;
+}
+
+.linha1-row {
+  padding: 5px 15px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .title {
+  text-align: center;
+}
+
+.info-row, .info-row22 {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  display: table;
+  width: 100%;
+}
+
+.info-row333 {
+  align-items: flex-start;
+  border: 1px solid black;
+  padding: 4px;
+}
+
+.info-labels, .info-values {
+  text-align: right;
+}
+
+
+.info-row > div, .info-row22 > div {
+  border-right: 1px solid #171717;
+  display: table-cell;
+}
+
+.info-column, .info-column22 {
+  padding-left: 10px;
+}
+
+.info-column33 {
+  padding-left: 10px;
+  border: 1px solid black;
+}
+
+
+.info-rodape1 {
+  border-top: 1px solid #171717;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 4px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 8px;
+}
+
+.footer {
+  margin-top: 20px;
+  border-top: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.page-break {
+  page-break-after: always;
+}
+
+.flex-container {
+  width: 100%;
+}
+
+.tabela-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.tabela {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela th, .tabela td {
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.right-component {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.thprograma {
+  width: 2% !important;
+  border-bottom: transparent !important;
+}
+
+.thcomunicador {
+  width: 6%;
+  border-bottom: transparent !important;
+}
+
+.texto-programa {
+  text-align: left !important;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.texto-comunicador {
+  text-align: left !important;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.thprograma2 {
+  width: 2%;
+}
+
+.thhorario {
+  width: 4%;
+}
+
+.thhorario2 {
+  width: 2%;
+}
+
+
+.tabela td {
+  height: 115px !important;
+}
+
+
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.informacoes-header, .informacoes-apoio, .piHeader {
+  font-family: "Roboto", sans-serif;
+  font-size: 8px;
+  font-weight: 300;
+  margin-top: -6px;
+}
+
+.piHeader {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: right;
+}
+
+.caixa {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.caixa2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.coluna {
+  text-align: left;
+  border: 1px solid #686868;
+}
+
+.coluna2 {
+  text-align: left;
+  border: 1px solid #686868;
+  padding: 5px;
+}
+
+.linha {
+  display: flex;
+  justify-content:space-between;
+  padding-right: 3%;
+  margin-top: -8px;
+  padding-left: 2px;
+}
+
+.info {
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  padding-left: 4px;
+}
+
+.divisor {
+  margin-top: -5px;
+  border: none;
+  border-top: 1px solid #000;
+  height: 1px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.titulo-tabela {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 8px;
+  background-color: #80998e !important;
+  padding: 5px;
+  max-width: 100% !important;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 6px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 8px;
+  vertical-align: top;
+}
+
+
+.tabela {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.thprograma22 {
+  width: 81%;
+  text-align: left !important;
+  padding-left: 5px;
+  font-size: 12px;
+  border: transparent !important;
+}
+
+
+.thprograma3 {
+  width: 4%;
+}
+
+.thprograma33 {
+  width: 4%;
+  font-size: 8px;
+  font-weight: 300;
+  border-top: transparent !important;
+  border-right: transparent !important;
+}
+
+.thprograma4 {
+  width: 1%;
+}
+
+.thprograma44 {
+  width: 10%;
+  text-align: right !important;
+  font-size: 8px;
+  border-top: transparent !important;
+  border-right: transparent !important;
+}
+
+.tabela td {
+  height: 105px !important;
+  
+}
+
+.th2 {
+  border-top: transparent !important;
+  border-left: transparent !important;
+  border-right: transparent !important;
+  border-bottom: transparent !important;
+}
+
+.info-row333 {
+  align-items: flex-start;
+  border: 1px solid black;
+  padding: 4px;
+}
+
+.info-row, .info-row22 {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  display: table;
+  width: 100%;
+}
+
+.bordafinal {
+  border: 1px solid black;
+}
+
+.piVeiculo, .piVeiculo2, .piVeiculo3 {
+  font-size: 10px;
+  padding-left: 5px;
+}
+
+.piVeiculoobs {
+  font-size: 10px;
+  padding-left: 5px;
+  margin-bottom: 8px;
+}
+
+.th222 {
+  margin-top: -30px;
+  margin-right: 50px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.autorizado {
+  text-align: center;
+  justify-content: center;
+}
+
+.info2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 8px;
+}
+
+.espacamentoEssie {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 25px;
+}
+
+.datasSelecionadas {
+  width: 0.5% !important;
+  font-size: 6.5px !important;
+}
+
+.datasSelecionadas2 {
+  width: 0.5% !important;
+  font-size: 6.5px !important;
+}

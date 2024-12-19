@@ -1,0 +1,147 @@
+    <!--INFORMAÇÕES DO CABEÇALHO-->
+    <div class="header">
+        <div class="header-item">
+        </div>
+        <div class="header-item">
+            <div class="logo">
+                <a href=""><img src="{{ logoEmpresa }}" alt="logo" border="0" /></a>
+            </div>
+            <div class="informacoes-logo">
+                <p class="informacoes-header">{{ Empresa.RazaoSocial }}</p>
+                <div class="header-apoio">
+                    <p class="informacoes-apoio">{{ Empresa.Endereco }}</p>
+                    <p class="informacoes-apoio">{{ Empresa.Cidade }} - {{ Empresa.Estado }} - CEP {{ Empresa.CEP }}</p>
+                    <p class="informacoes-apoio">Fone (11) 3279 - 9400 - Fax</p>
+                    <p class="informacoes-apoio">CNPJ {{ Empresa.CNPJ }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="header-item">
+            <p class="piHeader" style="margin-top:-100px">Pedido de Inserção</p>
+        </div>
+    </div>
+
+    <!-- LINHA 1 CABEÇALHO -->
+    <table class="header-table-personalizado">
+        <tr>
+            <td>
+                <div>
+                    <div class="linha1-personalizado">
+                        <p class="piVeiculo-personalizado" id="veiculoNome"><strong>VEÍCULO:</strong> {{pi.VeiculoNomeFantasia}}</p>
+                        <p class="piVeiculo-personalizado" id="veiculoNome"><strong>FONE: </strong> -</p>
+                    </div>
+                    <div class="linha1-row-personalizado">
+                        <p class="piVeiculo-personalizado"><strong>RAZÃO SOCIAL:</strong> {{pi.VeiculoRazaoSocial}}</p>
+                    </div>
+                    <div class="linha1-personalizado">
+                        <p class="piVeiculo-personalizado"><strong>CIDADE:</strong> {{pi.VeiculoCidade}}</p>
+                        <p class="piVeiculo-personalizado"><strong>ESTADO:</strong> {{pi.VeiculoEstado}}</p>
+                    </div>
+                    <div class="linha1-personalizado">
+                        <p class="piVeiculo-personalizado"><strong>CNPJ:</strong> {{pi.VeiculoCNPJ}}</p>
+                        <p class="piVeiculo-personalizado"><strong>CEP:</strong> {{pi.VeiculoCEP}}</p>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <div class="linha1-personalizado">
+                        <p class="piVeiculo-personalizado" id="veiculoNome"><strong>CLIENTE: </strong> {{ Cliente.RazaoSocial }}</p>
+                    </div>
+                    <div class="linha1-row-personalizado">
+                        <p class="piVeiculo-personalizado"><strong>ENDEREÇO:</strong> {{ Cliente.Endereco }}</p>
+                    </div>
+                    <div class="linha1-personalizado">
+                        <p class="piVeiculo-personalizado"><strong>CIDADE:</strong> {{Cliente.Cidade}}</p>
+                        <p class="piVeiculo-personalizado"><strong>ESTADO:</strong> {{Cliente.Estado}}</p>
+                    </div>
+                    <div class="linha1-personalizado">
+                        <p class="piVeiculo-personalizado"><strong>CNPJ: </strong> {{Cliente.CNPJ}}</p>
+                        <p class="piVeiculo-personalizado"><strong>CEP:</strong> {{Cliente.CEP}}</p>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <div class="linha2-personalizado">
+                        <p class="piVeiculo-personalizado label-personalizado"><strong>PI:</strong></p>
+                        <p class="piVeiculo-personalizado valor-personalizado">{{ NumeroPI }}</p>
+                    </div>
+                    <div class="linha2-personalizado" style="margin-top:-10px;">
+                        <p class="piVeiculo-personalizado label-personalizado"><strong>AP:</strong></p>
+                        <p class="piVeiculo-personalizado valor-personalizado">{{ NumeroAP }}</p>
+                    </div>
+                </div>
+                <hr class="linha-completa">
+                <div>
+                    <div class="linha2-personalizado">
+                        <p class="piVeiculo-personalizado label-personalizado"><strong>PERÍODO VEÍC.:</strong></p>
+                        <p class="piVeiculo-personalizado valor-personalizado">{{ MesAno }}</p>
+                    </div>
+                    <div class="linha2-personalizado" style="margin-top:-10px;">
+                        <p class="piVeiculo-personalizado label-personalizado"><strong>VENCIMENTO:</strong></p>
+                        <p class="piVeiculo-personalizado valor-personalizado">{{ DataVencimento }}</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- LINHA 2 CABEÇALHO -->
+    <table class="header-table-personalizado">
+        <tr>
+            <td>
+                    <div>
+                        <div class="linha1-personalizado">
+                            <p class="piVeiculo-personalizado label-personalizado"><strong>PRODUTO:</strong> {{ Produto }}</p>
+                        </div>
+                        <hr class="linha-completa">
+                        <div class="linha2-personalizado">
+                            <p class="piVeiculo-personalizado label-personalizado" style="padding-top:5px;"><strong>CAMPANHA:</strong> {{ Campanha }}</p>
+                        </div>
+                    </div>
+            </td>
+
+            <td>
+                    <div>
+                        {% if pi.Modelo == '3' %}
+                        <div class="linha1-personalizado">
+                            <p class="piVeiculo-personalizado" id="veiculoNome"><strong>AGÊNCIA:</strong> {{nomeAgencia}}</p>
+                        </div>
+                        <div class="linha1-personalizado">
+                            <p class="piVeiculo-personalizado"><strong>CIDADE:</strong> {{cidadeAgencia}}</p>
+                            <p class="piVeiculo-personalizado"><strong>ESTADO:</strong> {{estadoAgencia}}</p>
+                        </div>
+                        <div class="linha1-personalizado">
+                            <p class="piVeiculo-personalizado"><strong>CNPJ: </strong> {{cnpjAgencia}}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+            </td>
+
+            <td>
+                    <div>
+                        <div class="linha1-personalizado">
+                            <p class="piVeiculo-personalizado label-personalizado"><strong>EMISSÃO:</strong> {{ DataEmissao }}</p>
+                        </div>
+                        <hr class="linha-completa">
+                        <div class="linha2-personalizado">
+                            <p class="piVeiculo-personalizado label-personalizado" style="padding-top:5px;"><strong>PÁGINA:</strong> 1</p>
+                        </div>
+                    </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- LINHA 3 CABEÇALHO -->
+    <table class="header-table-personalizado-titulo" style="border-top:transparent !important; margin-top:-10px;margin-bottom: -10px;">
+        <tr>
+            <td style="border-top:transparent !important">
+                <div>
+                    <div class="linha1-personalizado">
+                        <p class="piVeiculo-personalizado label-personalizado" style="padding-left:5px; font-size: 11px;"><strong>TÍTULO:</strong> {{pi.Peca}}</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>

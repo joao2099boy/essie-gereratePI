@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido de Inserção</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ooh.css') }}">
+</head>
+<body>
+{% for pi in PI %}
+<div class="container">
+    {% include 'components/header.html' %}
+
+        <div class="tabela-container">
+            <table class="tabela">
+                <thead class="titulo-tabela">
+                <tr>
+                <th class="thprogramaSeq">SEQ.</th>
+                <th class="thcomunicadorSeq">PROGRAMAÇÃO</th>
+                <th>PÇ</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+                <th>19</th>
+                <th>20</th>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+                <th>24</th>
+                <th>25</th>
+                <th>26</th>
+                <th>27</th>
+                <th>28</th>
+                <th>29</th>
+                <th>30</th>
+                <th>31</th>
+                <th class="thprograma4">INS</th>
+                <th class="thprograma3">NEGOC</th>
+                <th class="thprograma3">TOTAL</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for pi in PI %}
+                    <tr>
+                        <td>1</td>
+                        <td>{{ pi.programacaoOOH }}</td>
+                        <td>{{ pecas[0].peca }}</td>
+                        <td class="divisao-tabela" colspan="31">
+                            {{ pecas[0].titulo }}
+                        </td>
+                        <td>{{ totalInsercoes }}</td>
+                        <td>R$ {{ pi.UnitarioBruto }}</td>
+                        <td>R$ {{ pi.TotalBruto }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="coluna2">
+            <p class="info">
+                {{ obsOne }}
+                <br>
+                {{ obsTwo }}
+            </p>
+
+        </div>
+        
+        <div class="tabela-container">
+            <table class="tabela">
+                <thead class="titulo-tabela2">
+                <tr>
+                <th class="thprograma">TOTAL GERAL</th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+                <th class="th2"></th>
+    
+
+                <th class="thprograma4">{{ pi.Insercoes }}</th>
+                <th class="thprograma3">{{ totalBrutoo | currency }}</th>
+                <th class="thprograma3">{{ totalBruto | currency }}</th>
+
+                </tr>
+                </thead>
+            </table>
+        </div>
+
+        {% include 'components/footer.html' %}
+
+</div>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,115 @@
+
+<div class="bordafinal">
+    <div class="tabela-container">
+        <table class="tabela">
+            <thead class="titulo-tabela2">
+            <tr>
+            <th class="thprograma22">
+                Observações:
+            </th>
+
+            <th class="thprograma44">
+                <div><b>Total Bruto</b></div>
+
+                {% if pi.Modelo == '2' or pi.Modelo == '4' %}
+                <div><b>Comissão da Agência </b></div>
+                {% endif %}
+
+                {% if pi.Modelo == '2' or pi.Modelo == '5' %}
+                <div><b>Comissão da {{ nomeEmpresa }}</b></div>
+                {% endif %}
+
+                {% if pi.Modelo == '1'%}
+                <div><b>Comissão da {{ nomeEmpresa }}</b></div>
+                {% endif %}
+
+                {% if pi.Modelo == '3'%}
+                <div><b>Desconto da Agência </b></div>
+                {% endif %}
+
+                
+                <div><b>Total Líquido</b></div>
+
+                {% if pi.Modelo == '3' or pi.Modelo == '4' %}
+                <hr>
+                <div><b>Comissão da {{nomeEmpresa}}</b></div>
+                {% endif %}
+
+                {% if pi.Modelo == '4' %}
+                <hr>
+                <div><b>Vencimento {{nomeEmpresa}}</b></div>
+                {% endif %}
+
+            </th>
+            
+            <th class="thprograma33">
+                <div>
+                    {% if pi.Modelo != '5' %}
+                        {{ totalBruto | currency }}
+                    {% else %}
+                        -
+                    {% endif %}
+                </div>
+
+                {% if pi.Modelo == '2' or pi.Modelo == '4' %}
+                <div>{{ comissaoAgencia | currency }}</div>
+                {% endif %}
+
+                {% if pi.Modelo == '2' or pi.Modelo == '5' %}
+                <div>
+                    {% if pi.Modelo != '5' %}
+                        {{ comissaoSBC| currency }}
+                    {% else %}
+                        -
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                {% if pi.Modelo == '1' or pi.Modelo == '3' %}
+                <div>{{ comissaoSBC | currency }}</div>
+                {% endif %}
+
+                {% if pi.Modelo == '3'%}
+                <div>{{ pi.descontoUnitario | currency }}</div>
+                {% endif %}
+
+                <div>{{ TotalLiquido | currency }}</div>
+
+                {% if pi.Modelo == '3' or pi.Modelo == '4' %}
+                <hr>
+                <div>{{ comissaoSBC | currency }}</div>
+                {% endif %}
+
+                {% if pi.Modelo == '4' %}
+                <hr>
+                <div>{{ DataVencimento }}</div>
+                {% endif %}
+
+            </th>
+
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <br><br>
+    <div class="th222">
+        {% for observacao in Observacoes %}
+        <p class="piVeiculoobs"><strong>{{ loop.index }}) {{ observacao.Frase }}</strong></p>
+        {% endfor %}
+        <div class="row">
+            <p class="piVeiculo2" style="margin-left:-10px;"><strong>Controle Interno SBC:</strong> PI - {{ NumeroPI }}</p>
+            <div class="autorizado">
+
+                <p class="piVeiculo2" style="margin-top:-10px;">
+
+                    <div class="assinatura">
+                        <a href=""><img src="{{ Assinatura }}" alt="assinatura" border="0" /></a>
+                    </div>
+                    ______________________
+                    <br>
+                    <strong>AUTORIZADO</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
