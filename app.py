@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 from weasyprint import HTML, CSS
 from supabase import create_client, Client
 from datetime import datetime, timezone
@@ -15,6 +16,8 @@ import calendar
 
 app = Flask(__name__)
 application = app
+
+CORS(app)
 
 SUPABASE_URL = 'https://aetqpjbeqzmpxwodxykm.supabase.co'
 BUCKET_NAME = 'piGeradasPDF'
